@@ -1,0 +1,27 @@
+
+<import src="../posts/post-item/post-item-template" />
+
+<!--轮播图-->
+<view>
+    <swiper catchtap="onSwiperTap" indicator-dots="true" autoplay="true">
+        <swiper-item>
+            <image src="/images/head/head01.jpeg" data-postId="0"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/head/head02.jpeg" data-postId="1"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/head/head03.jpeg" data-postId="2"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/head/head04.jpeg" data-postId="3"></image>
+        </swiper-item>
+    </swiper>
+</view>
+
+<!-- 新闻列表 -->
+<block wx:for="{{posts_key}}" wx:for-item="item">
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+        <template is="postItem" data="{{...item}}" /> 
+    </view>
+</block>
